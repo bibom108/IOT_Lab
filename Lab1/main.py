@@ -50,9 +50,13 @@ light_intesity = 100
 counter = 0
 while True:
     g = geocoder.ip('me')
-    collect_data = {'temperature': temp, 'humidity': humi, 'light':light_intesity, 'longitude':g.latlng[1], 'latitude':g.latlng[0]}
+    longitude = g.latlng[1]
+    latitude = g.latlng[0]
+    collect_data = {'temperature': temp, 'humidity': humi, 'light':light_intesity,
+                    'longitude':longitude, 'latitude':latitude
+                    }
     temp += 1
     humi += 1
     light_intesity += 1
     client.publish('v1/devices/me/telemetry', json.dumps(collect_data), 1)
-    time.sleep(5)
+    time.sleep(10)
