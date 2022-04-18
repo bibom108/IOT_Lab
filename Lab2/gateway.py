@@ -54,6 +54,6 @@ while True:
     pump_data = {'device':'PUMP', 'status':'OFF'}
     # client.publish('/bkiot/1914691/led', json.dumps(led_data), 1)
     # client.publish('/bkiot/1914691/pump', json.dumps(pump_data), 1)
-    temp += 1
-    humi += 1
+    temp += 5
+    humi += 5
     time.sleep(10)

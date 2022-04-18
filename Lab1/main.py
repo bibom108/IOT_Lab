@@ -63,4 +63,4 @@ while True:
     light_intesity += 1
     client.publish('v1/devices/me/telemetry',
                     json.dumps(collect_data), 1)
-    time.sleep(10)
+    time.sleep(2)
